@@ -11,3 +11,5 @@ categoriesItems.forEach(item => {
   console.log(`Category: ${categoryName}`);
   console.log(`Elements: ${elementsQuantity}`);
 });
+
+console.log(Array.isArray(categoriesItems));

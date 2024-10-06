@@ -31,25 +31,33 @@ function clear() {
 
 function createBoxes(amount) {
   clear();
-  for (let index = 0; index < amount; index++) {
-    const box = document.createElement('div');
-    box.style.width = `${sizes}px`;
-    box.style.height = `${sizes}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    // console.log(box);
-    divEl.append(box);
-    inputEl.value = '';
+  let boxes = '';
+  for (let i = 0; i < amount; i++) {
+    const box = `<div style="width: ${sizes}px; height: ${sizes}px; background-color: ${getRandomHexColor()};"></div>`;
+    boxes += box;
     sizes += 10;
   }
+  // divEl.insertAdjacentHTML('afterbegin', boxes);
+  divEl.innerHTML = boxes;
+  inputEl.value = '';
 }
-
-console.log(divEl);
-console.log(inputEl);
-console.log(createBtn);
-console.log(destroyBtn);
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
 }
+
+// function createBoxes(amount) {
+//   clear();
+//   for (let index = 0; index < amount; index++) {
+//     const box = document.createElement('div');
+//     box.style.width = `${sizes}px`;
+//     box.style.height = `${sizes}px`;
+//     box.style.backgroundColor = getRandomHexColor();
+//     // console.log(box);
+//     divEl.append(box);
+//     inputEl.value = '';
+//     sizes += 10;
+//   }
+// }

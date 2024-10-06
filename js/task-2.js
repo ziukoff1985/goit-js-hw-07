@@ -35,6 +35,4 @@ const imagesList = images
   })
   .join('');
 
-// console.log(imagesList);
-
 gallary.insertAdjacentHTML('afterbegin', imagesList);
